@@ -23,7 +23,7 @@ function App() {
       {loader 
         ? (
           <>
-            <Router>
+            <Router basename="/password_manager">
               <Header />
               <Route path="/dashboard">
                 <DashboardInfo/>
@@ -43,5 +43,21 @@ function App() {
     </>
   )
 }
+
+// export default function Routes() {
+//   const store = configureStore({ history });
+//   return (
+//     <Provider store={store}>
+//       <BrowserRouter history={history} basename={process.env.PUBLIC_URL}>
+//         <Switch>
+//           <Route exact path="/" component={App} />
+//           <Route path="/todo" component={Todo} />
+//           <Route component={() => (<div>404 Not found </div>)} />
+//         </Switch>
+//       </BrowserRouter>
+//     </Provider>
+//   );
+// }
+
 
 export default App;

@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/leonid1313/password_manager/static/css/main.3b620501.chunk.css",
-    "main.js": "/leonid1313/password_manager/static/js/main.f5244a6d.chunk.js",
-    "main.js.map": "/leonid1313/password_manager/static/js/main.f5244a6d.chunk.js.map",
+    "main.js": "/leonid1313/password_manager/static/js/main.9882e6ad.chunk.js",
+    "main.js.map": "/leonid1313/password_manager/static/js/main.9882e6ad.chunk.js.map",
     "runtime-main.js": "/leonid1313/password_manager/static/js/runtime-main.adc7ca54.js",
     "runtime-main.js.map": "/leonid1313/password_manager/static/js/runtime-main.adc7ca54.js.map",
     "static/js/2.9bfdfb25.chunk.js": "/leonid1313/password_manager/static/js/2.9bfdfb25.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.adc7ca54.js",
     "static/js/2.9bfdfb25.chunk.js",
     "static/css/main.3b620501.chunk.css",
-    "static/js/main.f5244a6d.chunk.js"
+    "static/js/main.9882e6ad.chunk.js"
   ]
 }

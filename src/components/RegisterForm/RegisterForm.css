@@ -1,0 +1,58 @@
+.container-form-registration {
+  width: 40%;
+  margin: 0 auto;
+  border: 10px solid purple;
+  border-radius: 15px;
+}
+
+.title-registration {
+  text-transform: uppercase;
+  text-align: center;
+  background-color: rgb(195, 120, 238);
+  margin: 0;
+  font-size: 40px;
+  border-radius: 7px;
+  padding: 20px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.register-text {
+  padding: 10px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.register-email {
+  padding: 10px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.register-password {
+  padding: 10px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.register-button {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  align-self: center;
+  width: 50%;
+  font-size: 20px;
+  transition: 0.3s linear;
+  margin-bottom: 20px;
+}
+
+.register-button:hover {
+  background-color: rgb(72, 240, 203);
+}

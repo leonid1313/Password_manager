@@ -1,0 +1,23 @@
+.container-button {
+  margin-bottom: 15px;
+}
+
+.button {
+  text-transform: uppercase;
+  padding: 10px 15px;
+  margin-left: 15px;
+  border-radius: 15px;
+  transition: 0.3s linear;
+}
+
+.button:hover {
+  background-color: rgb(72, 240, 203);
+}
+
+.button-delete:hover {
+  background-color: rgb(240, 72, 72);
+}
+
+.button-reveal:hover {
+  background-color: rgb(72, 240, 86);
+}

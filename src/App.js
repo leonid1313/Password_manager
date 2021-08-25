@@ -1,25 +1,47 @@
-import logo from './logo.svg';
+import React, {useState, useEffect} from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import Loader from './components/Loader/Loader.jsx';
+import Header from './components/Header/Header.jsx';
+import LoginForm from './components/LoginForm/LoginForm';
+import RegisterForm from './components/RegisterForm/RegisterForm';
+import DashboardInfo from './components/DashboardInfo/DashboardInfo';
 
 function App() {
+
+  const [loader, setLoader] = useState(false);
+
+  useEffect(() => {
+    setLoader(false);
+    setTimeout(() => {
+      setLoader(true)
+    }, 1000)
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      {loader 
+        ? (
+          <>
+            <Router>
+              <Header />
+              <Route path="/dashboard">
+                <DashboardInfo/>
+              </Route>
+              <Route path="/register">
+                <RegisterForm/>
+              </Route>
+              <Route path="/login">
+                <LoginForm/>
+              </Route>
+              <Route path="/" exact component={LoginForm}/>
+            </Router>
+          </>
+          )
+        :  <Loader/>
+      }
+    </>
+  )
 }
 
 export default App;

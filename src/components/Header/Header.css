@@ -1,0 +1,12 @@
+.container-header {
+  background-color: rgb(72, 240, 203);
+  padding: 30px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.title-header {
+  color: rgb(29, 8, 8);
+  font-size: 28px;
+  text-align: center;
+}

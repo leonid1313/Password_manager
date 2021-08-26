@@ -21,3 +21,11 @@
 .button-reveal:hover {
   background-color: rgb(72, 240, 86);
 }
+
+.hidden {
+  display: none;
+}
+
+.block {
+  display: block;
+}

@@ -10,11 +10,11 @@ function LoginForm () {
       password: '1313',
       information: [
         {name: 'Leonid', password: 'you1313', sait: 'Youtube'},
-        {name: 'Leonid', password: 'work1313', sait: 'DOU'},
-        {name: 'Leonid', password: 'qwerty1313', sait: 'linkedin'},
-        {name: 'Leonid', password: 'maloi1313', sait: 'FavBet'}]
+        {name: 'Leonid1', password: 'work1313', sait: 'DOU'},
+        {name: 'Leonid2', password: 'qwerty1313', sait: 'linkedin'},
+        {name: 'Leonid3', password: 'maloi1313', sait: 'FavBet'}]
     }));
-  
+
   const items = {...localStorage};
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');

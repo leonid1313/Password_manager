@@ -4,32 +4,28 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Card from '../Card/Card.jsx'
 import ModalAdd from '../Modals/ModalAdd/ModalAdd';
 
-function DashboardInfo ({
-  ...props
-}) {
+function DashboardInfo () {
 
-  console.log(props);
   const items = {...localStorage};
   let arr = [];
   for (let i = 0; i < Object.values(items).length; i++) {
-        (Object.keys(items)).find(function (element) {
-          if (element === ((JSON.parse(Object.values(items)[i])).name)) {
-            arr.push(...(JSON.parse(Object.values(items)[i])).information)
-          } 
-        });
+    (Object.keys(items)).find(function (element) {
+      if ((element === ((JSON.parse(Object.values(items)[i])).name))) {
+        arr.push(...(JSON.parse(Object.values(items)[i])).information)
+      }  else {
+        arr.push()
+      }
+    });
   }
 
+  const [modalAdd, setModalAdd] = useState(false)
   const [modal, setModal] = useState(false)
-  const [arrValues, setArrValues] = useState(arr)
+  const [list, updateList] = useState(arr);
 
   const openModal = () => {    
-    setModal(true)
+    setModalAdd(true)
   }
 
-  const addLine = () => {
-    setArrValues([...arr])
-    setModal(false)
-  }
 
   return (
     <div className="container-dashboard">
@@ -43,14 +39,17 @@ function DashboardInfo ({
         Log out
       </Link>
       <div>
-      { arrValues.map(item => (
+      { list.map(item => (
             <div className="container-info">
               <Card
                 key={item.name}
                 name={item.name}
                 password={item.password}
                 sait={item.sait}
-                arr={arrValues}
+                arr={list}
+                setModal={setModal}
+                modal={modal}
+                updateList={updateList}
               />
             </div>
           ))
@@ -62,12 +61,14 @@ function DashboardInfo ({
       >
         Add new line
       </button>
-      {modal && 
+      {modalAdd && 
           <div className="container-modal">
             <div className="card-modal">
               <ModalAdd
-                onCancel={setModal}
-                addLine={addLine}
+                onCancel={setModalAdd}
+                arr={list}
+                updateList={updateList}
+                items={items}
               />
             </div>
           </div>

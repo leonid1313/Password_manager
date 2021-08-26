@@ -15,6 +15,32 @@
   left: 0;
 }
 
+.form-modal-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.title-modal-edit {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 23px;
+}
+
+.input-modal-edit {
+  width: 80%;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.button-modal-edit {
+  width: 80%;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 15px;
+}
+
 .button-close {
   position: absolute;
   top: 6%;
@@ -32,19 +58,6 @@
 .button-close:hover {
   cursor: pointer;
   background-color: rgb(206, 47, 47);
-}
-
-.text-card__modal {
-  text-align: center;
-  margin: 8px 0px;
-}
-
-.title-card__modal {
-  text-align: center;
-}
-
-.text-price__modal {
-  text-align: center;
 }
 
 @media (max-width: 420px) {

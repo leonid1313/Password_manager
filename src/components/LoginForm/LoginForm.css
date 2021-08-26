@@ -1,16 +1,16 @@
 .container-form-login {
   width: 40%;
   margin: 0 auto;
-  border: 10px solid purple;
+  border: 10px solid #3b5998;
   border-radius: 15px;
 }
 
 .title-login {
   text-align: center;
-  background-color: rgb(195, 120, 238);
+  background-color: #3b5998;
   margin: 0;
-  font-size: 60px;
-  border-radius: 7px;
+  font-size: 40px;
+  padding: 20px;
 }
 
 .link {

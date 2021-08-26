@@ -3,9 +3,10 @@ import './ModalAdd.css'
 
 const ModalAdd = ({
   onCancel,
-  addLine
+  arr,
+  updateList,
+  items
 }) => {
-
   const closeModal = () => {
     onCancel(false)
   }
@@ -24,6 +25,18 @@ const ModalAdd = ({
 
   const changeSait = (event) => {
     setSait(event.target.value)
+  }
+
+  const addLine = () => {
+    arr.push({'name': name, 'password': password, 'sait': sait})
+    JSON.parse((Object.values(items))).information.push({'name': name, 'password': password, 'sait': sait})
+    delete localStorage.Leonid
+    delete JSON.parse((Object.values(items))).information
+    JSON.parse((Object.values(items)))
+    localStorage[JSON.parse(Object.values(items)).name] = JSON.parse(JSON.stringify(Object.values(items)));
+    // localStorage.setItem(JSON.parse(Object.values(items)).name, JSON.parse(JSON.stringify(Object.values(items))))
+    updateList(arr)
+    onCancel(false)
   }
 
   return (

@@ -9,10 +9,10 @@ function LoginForm () {
       name: "Leonid",
       password: '1313',
       information: [
-        {name: 'Leonid', password: 'you1313', sait: 'Youtube'},
-        {name: 'Leonid1', password: 'work1313', sait: 'DOU'},
-        {name: 'Leonid2', password: 'qwerty1313', sait: 'linkedin'},
-        {name: 'Leonid3', password: 'maloi1313', sait: 'FavBet'}]
+        {name: 'Leonid', password: 'you1313', sait: 'Youtube', id: 1},
+        {name: 'Leonid1', password: 'work1313', sait: 'DOU', id: 2},
+        {name: 'Leonid2', password: 'qwerty1313', sait: 'linkedin', id: 3},
+        {name: 'Leonid3', password: 'maloi1313', sait: 'FavBet', id: 4}]
     }));
 
   const items = {...localStorage};

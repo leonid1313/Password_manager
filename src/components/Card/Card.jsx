@@ -10,6 +10,7 @@ function Card ({
   updateList,
   setModal,
   modal,
+  id,
 }) {
 
   const [pass, setPass] = useState('hidden')
@@ -20,15 +21,13 @@ function Card ({
 
   const openModal = () => {  
     setModal(true)  
-    let a = arr.find(item => item.sait === sait)
+    let a = arr.find(item => item.id === id)
     setCard(a)
     setEditPass(a.password)
   }
-  console.log(card);
-  console.log(editPass);
 
   const handleRemoveItem = () => {
-    updateList(arr.filter(item => item.sait !== sait));
+    updateList(arr.filter(item => item.id !== id));
   }
 
   const reveal = () => {

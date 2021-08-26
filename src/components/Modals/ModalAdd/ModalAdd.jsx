@@ -28,8 +28,8 @@ const ModalAdd = ({
   }
 
   const addLine = () => {
-    arr.push({'name': name, 'password': password, 'sait': sait})
-    JSON.parse((Object.values(items))).information.push({'name': name, 'password': password, 'sait': sait})
+    arr.push({'name': name, 'password': password, 'sait': sait, id: arr.length + 1})
+    JSON.parse((Object.values(items))).information.push({'name': name, 'password': password, 'sait': sait, id: arr.length + 1})
     delete localStorage.Leonid
     delete JSON.parse((Object.values(items))).information
     JSON.parse((Object.values(items)))
@@ -38,7 +38,7 @@ const ModalAdd = ({
     updateList(arr)
     onCancel(false)
   }
-
+  
   return (
     <>
         <div className="card">

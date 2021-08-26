@@ -50,6 +50,7 @@ function DashboardInfo () {
                 setModal={setModal}
                 modal={modal}
                 updateList={updateList}
+                id={item.id}
               />
             </div>
           ))

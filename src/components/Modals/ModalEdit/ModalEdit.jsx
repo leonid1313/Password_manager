@@ -23,8 +23,6 @@ const ModalEdit = ({
     onCancel(false)
   }
 
-  console.log(name);
-
   return (
     <>
         <div className="card-modal-edit">

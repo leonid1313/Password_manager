@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './DashboardInfo.css'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Card from '../Card/Card.jsx'
@@ -22,9 +22,20 @@ function DashboardInfo () {
   const [modal, setModal] = useState(false)
   const [list, updateList] = useState(arr);
 
-  const openModal = () => {    
+  const initialState = () =>
+  localStorage.getItem(JSON.parse(Object.values(items)).name || null);
+  const [count, setCount] = useState(initialState);
+  let parseInitialState = JSON.parse(initialState())
+  let replacingArray = parseInitialState.information = list
+  let updateLocalStorage = JSON.stringify(parseInitialState)
+
+  const openModal = () => {
     setModalAdd(true)
-  }
+  };
+
+  useEffect(() => {
+    window.localStorage.setItem(JSON.parse(Object.values(items)).name, count)
+  }, [count]);
 
 
   return (
@@ -51,6 +62,8 @@ function DashboardInfo () {
                 modal={modal}
                 updateList={updateList}
                 id={item.id}
+                setCount={ setCount}
+                updateLocalStorage={updateLocalStorage}
               />
             </div>
           ))
@@ -67,9 +80,10 @@ function DashboardInfo () {
             <div className="card-modal">
               <ModalAdd
                 onCancel={setModalAdd}
-                arr={list}
+                list={list}
                 updateList={updateList}
-                items={items}
+                setCount={setCount}
+                updateLocalStorage={updateLocalStorage}
               />
             </div>
           </div>

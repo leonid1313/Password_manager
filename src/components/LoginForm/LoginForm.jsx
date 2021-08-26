@@ -15,6 +15,7 @@ function LoginForm () {
         {name: 'Leonid3', password: 'maloi1313', sait: 'FavBet', id: 4}]
     }));
 
+
   const items = {...localStorage};
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');

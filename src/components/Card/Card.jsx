@@ -11,64 +11,56 @@ function Card ({
   setModal,
   modal,
   id,
+  setCount,
+  updateLocalStorage,
 }) {
 
-  const [pass, setPass] = useState('hidden')
-  const [starPass, setStarPass] = useState('block')
-  const [card, setCard] = useState(password)
-  const [editPass, setEditPass] = useState('')
+  const [passwordValue, setPasswordValue] = useState('hidden')
+  const [passwordStar, setPasswordStar] = useState('block')
+  const [editPassword, setEditPassword] = useState(password)
 
 
   const openModal = () => {  
     setModal(true)  
-    let a = arr.find(item => item.id === id)
-    setCard(a)
-    setEditPass(a.password)
+    setEditPassword(arr.find(item => item.id === id).password)
+    console.log(editPassword);
   }
 
   const handleRemoveItem = () => {
     updateList(arr.filter(item => item.id !== id));
+    setCount(updateLocalStorage)
   }
 
-  const reveal = () => {
-    setPass('block')
-    setStarPass('hidden')
+  const revealPassword = () => {
+    setPasswordValue('block')
+    setPasswordStar('hidden')
   }
 
-  const hide = () => {
-    setPass('hidden')
-    setStarPass('block')
+  const hidePassword = () => {
+    setPasswordValue('hidden')
+    setPasswordStar('block')
   }
 
   return (
     <div className="container-card">
       <p className="name"> Name: {name}</p>
       <p className="Password"> Password: 
-        <span className={starPass}>********</span> 
-        <span className={pass}>
-          {(editPass === '') 
-          ? password
-          : editPass}
-        </span> 
+        <span className={passwordStar}>********</span> 
+        <span className={passwordValue}>{editPassword}</span> 
       </p>
       <p className="Sait"> Sait: {sait}</p>
       <div className="container-button">
         <button className="button button-edit" onClick={openModal}>Edit password</button>
         <button className="button button-delete" onClick={handleRemoveItem}>delete line</button>
-        <button className="button button-reveal" onClick={reveal}>Show password</button>
-        <button className="button button-reveal" onClick={hide}>hide password</button>
+        <button className="button button-reveal" onClick={revealPassword}>Show password</button>
+        <button className="button button-reveal" onClick={hidePassword}>hide password</button>
       </div>
       {modal && 
           <div className="container-modal">
             <div className="card-modal">
               <ModalEdit
                 onCancel={setModal}
-                updateList={updateList}
-                arr={arr}
-                password={password}
-                sait={sait}
-                name={name}
-                setEditPass={setEditPass}
+                setEditPassword={setEditPassword}
               />
             </div>
           </div>

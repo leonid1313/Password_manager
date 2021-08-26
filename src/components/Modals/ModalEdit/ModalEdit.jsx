@@ -3,9 +3,7 @@ import './ModalEdit.css'
 
 const ModalEdit = ({
   onCancel,
-  setEditPass,
-  arr,
-  sait
+  setEditPassword,
 }) => {
 
   const [name, setName] = useState('');
@@ -17,9 +15,9 @@ const ModalEdit = ({
   const changePassword = (event) => {
     setName(event.target.value)
   }
-
+  
   const renamePass = () => {
-    setEditPass(name)
+    setEditPassword(name)
     onCancel(false)
   }
 

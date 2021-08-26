@@ -20,9 +20,8 @@ function Card ({
   const [editPassword, setEditPassword] = useState(password)
 
   const openModal = () => {  
-    setModal(true)  
+    setModal(true)
     setEditPassword(arr.find(item => item.id === id).password)
-    console.log(editPassword);
   }
 
   const handleRemoveItem = () => {

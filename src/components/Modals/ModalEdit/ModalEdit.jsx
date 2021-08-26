@@ -6,18 +6,18 @@ const ModalEdit = ({
   setEditPassword,
 }) => {
 
-  const [name, setName] = useState('');
+  const [names, setNames] = useState('');
 
   const closeModal = () => {
     onCancel(false)
   }
 
   const changePassword = (event) => {
-    setName(event.target.value)
+    setNames(event.target.value)
   }
   
   const renamePass = () => {
-    setEditPassword(name)
+    setEditPassword(names)
     onCancel(false)
   }
 
@@ -37,7 +37,7 @@ const ModalEdit = ({
               className="input-modal-edit"
               type='password'
               name="editPassword"
-              value={name}
+              value={names}
               onChange={event => changePassword(event)}
             />
             <button className="button-modal-edit" onClick={renamePass}>Eddit</button>

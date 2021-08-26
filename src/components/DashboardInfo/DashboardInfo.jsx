@@ -25,13 +25,10 @@ function DashboardInfo () {
   const initialState = () =>
   localStorage.getItem(JSON.parse(Object.values(items)).name || null);
   const [initialValue, setInitialValue] = useState(initialState);
-  console.log(initialValue);
+  
   let parseInitialState = JSON.parse(initialState())
   parseInitialState.information = list
   let updateLocalStorage = JSON.stringify(parseInitialState)
-
-  console.log(updateLocalStorage);
-
   const openModal = () => {
     setModalAdd(true)
   };

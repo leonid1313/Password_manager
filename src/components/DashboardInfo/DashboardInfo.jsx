@@ -24,18 +24,21 @@ function DashboardInfo () {
 
   const initialState = () =>
   localStorage.getItem(JSON.parse(Object.values(items)).name || null);
-  const [count, setCount] = useState(initialState);
+  const [initialValue, setInitialValue] = useState(initialState);
+  console.log(initialValue);
   let parseInitialState = JSON.parse(initialState())
-  let replacingArray = parseInitialState.information = list
+  parseInitialState.information = list
   let updateLocalStorage = JSON.stringify(parseInitialState)
+
+  console.log(updateLocalStorage);
 
   const openModal = () => {
     setModalAdd(true)
   };
 
   useEffect(() => {
-    window.localStorage.setItem(JSON.parse(Object.values(items)).name, count)
-  }, [count]);
+    localStorage.setItem(JSON.parse(Object.values(items)).name, updateLocalStorage)
+  }, [updateLocalStorage]);
 
 
   return (
@@ -62,7 +65,7 @@ function DashboardInfo () {
                 modal={modal}
                 updateList={updateList}
                 id={item.id}
-                setCount={ setCount}
+                setInitialValue={ setInitialValue}
                 updateLocalStorage={updateLocalStorage}
               />
             </div>
@@ -73,7 +76,7 @@ function DashboardInfo () {
         className="add"
         onClick={openModal}
       >
-        Add new line
+        Add new card
       </button>
       {modalAdd && 
           <div className="container-modal">
@@ -82,7 +85,7 @@ function DashboardInfo () {
                 onCancel={setModalAdd}
                 list={list}
                 updateList={updateList}
-                setCount={setCount}
+                setInitialValue={setInitialValue}
                 updateLocalStorage={updateLocalStorage}
               />
             </div>

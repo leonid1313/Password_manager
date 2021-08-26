@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './LoginForm.css'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 function LoginForm () {
-
-  localStorage.setItem("Leonid", JSON.stringify(
+    useEffect(() => {
+        localStorage.setItem("Leonid", JSON.stringify(
     {
       name: "Leonid",
       password: '1313',
@@ -14,7 +14,7 @@ function LoginForm () {
         {name: 'Leonid2', password: 'qwerty1313', sait: 'linkedin', id: 3},
         {name: 'Leonid3', password: 'maloi1313', sait: 'FavBet', id: 4}]
     }));
-
+    });
 
   const items = {...localStorage};
   const [name, setName] = useState('');

@@ -11,14 +11,13 @@ function Card ({
   setModal,
   modal,
   id,
-  setCount,
+  setInitialValue,
   updateLocalStorage,
 }) {
 
   const [passwordValue, setPasswordValue] = useState('hidden')
   const [passwordStar, setPasswordStar] = useState('block')
   const [editPassword, setEditPassword] = useState(password)
-
 
   const openModal = () => {  
     setModal(true)  
@@ -28,7 +27,7 @@ function Card ({
 
   const handleRemoveItem = () => {
     updateList(arr.filter(item => item.id !== id));
-    setCount(updateLocalStorage)
+    setInitialValue(updateLocalStorage)
   }
 
   const revealPassword = () => {
@@ -51,7 +50,7 @@ function Card ({
       <p className="Sait"> Sait: {sait}</p>
       <div className="container-button">
         <button className="button button-edit" onClick={openModal}>Edit password</button>
-        <button className="button button-delete" onClick={handleRemoveItem}>delete line</button>
+        <button className="button button-delete" onClick={handleRemoveItem}>delete card</button>
         <button className="button button-reveal" onClick={revealPassword}>Show password</button>
         <button className="button button-reveal" onClick={hidePassword}>hide password</button>
       </div>

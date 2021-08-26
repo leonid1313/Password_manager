@@ -5,7 +5,7 @@ const ModalAdd = ({
   onCancel,
   list,
   updateList,
-  setCount,
+  setInitialValue,
   updateLocalStorage,
 }) => {
   const closeModal = () => {
@@ -31,7 +31,7 @@ const ModalAdd = ({
   const addLine = () => {
     updateList((prevList) => [...prevList, {'name': name, 'password': password, 'sait': sait, id: list.length + 1}])
     onCancel(false)
-    setCount(updateLocalStorage)
+    setInitialValue(updateLocalStorage)
   }
 
   return (
